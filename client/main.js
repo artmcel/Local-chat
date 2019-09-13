@@ -1,4 +1,5 @@
-var socket = io.connect('http://10.0.0.23:6677', {'forceNew': true});
+//var socket = io.connect('http://10.0.0.23:6677', {'forceNew': true});
+var socket = io.connect('http://localhost:6677', {'forceNew': true});
 
 socket.on('message', function(data){
     console.log(data);
@@ -17,8 +18,8 @@ function render(data){
 
     var div_msg = document.getElementById('mensajes');
     div_msg.innerHTML = html;
-    
-    var cmsj = document.getElementById('c-msj'); 
+
+    var cmsj = document.getElementById('c-msj');
     cmsj.scrollTop = cmsj.scrollHeight;
 }
 
