@@ -1,3 +1,4 @@
+//El connect cambia dependiendo tu ip local.
 //var socket = io.connect('http://10.0.0.23:6677', {'forceNew': true});
 var socket = io.connect('http://localhost:6677', {'forceNew': true});
 
