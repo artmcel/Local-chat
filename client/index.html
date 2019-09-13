@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    -->
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <title>Chat-Socket</title>
+
+    <style type="text/css">
+        html{
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        #c-msj{
+            overflow-y: scroll;
+            width: 100%;
+            height: 250px;
+        }
+        section{
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1071;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Chat con NodeJS & Socket.io</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="container is-fluid">
+            <div id = "c-msj">
+                <div id="mensajes" class="box"></div>
+            </div>
+            <br/>
+            <div class="column is-two-fifths">
+                <form onsubmit="return addMessage(this);">
+                    <div class="field">
+                        <label class="label">Nickname: </label>
+                        <div class="control">
+                            <input class="input is-primary" type="text" id="nickname" placeholder="Nickname">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Mensaje</label>
+                        <div class="control">
+                            <textarea class="textarea is-primary" id="text"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" value="Enviar" class="button is-primary is-rounded">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
